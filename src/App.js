@@ -2,9 +2,16 @@ import { useState } from "react";
 import "./styles.css";
 
 export default function App() {
-  // Hello
   const [fName, setFName] = useState("");
   const [lName, setLName] = useState("");
+  
+  function changeFName(event){
+    setFName(event.target.value)
+  }
+  
+    function changeLName(event){
+    setLName(event.target.value)
+  }
 
   return (
     <div className="App">
@@ -15,13 +22,13 @@ export default function App() {
       <input
         type="text"
         placeHolder="First Name"
-        onChange={(e) => setFName(e.target.value)}
+        onChange={changeFName}
       ></input>
 
       <input
         type="text"
         placeHolder="Last Name"
-        onChange={(e) => setLName(e.target.value)}
+        onChange={changeLName}
       ></input>
     </div>
   );
